@@ -1,6 +1,7 @@
 package com.sbcoba.test.redis;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -55,6 +56,7 @@ public class RedisTestConfiguration {
 	 * Configures a {@link ReactiveRedisTemplate} with {@link String} keys and {@link GenericJackson2JsonRedisSerializer}.
 	 */
 	@Bean
+	@Qualifier("jsonObject")
 	public ReactiveRedisTemplate<String, Object> reactiveJsonObjectRedisTemplate(
 			ReactiveRedisConnectionFactory connectionFactory) {
 
